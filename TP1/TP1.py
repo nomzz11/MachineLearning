@@ -126,22 +126,12 @@ print(knn.score(X_test,Y_test))
 print(knn.accuracy_score(Y_pred,Y_test)) #taux de calssification, voir si le model est bien -> proche de 1
 
 #13-KNN avec différentes valeurs de k 
-        
-knn=KNeighborsClassifier(n_neighbors=3)
-knn.fit(X_train, Y_train)
-print("k=3 ent",knn.score(X_train,Y_train))
-Y_pred2 = knn.predict(X_test)
-print("k=3 test",knn.score(X_test,Y_test),"\n")
 
-knn=KNeighborsClassifier(n_neighbors=9)
-knn.fit(X_train, Y_train)
-print("k=9 ent",knn.score(X_train,Y_train))
-Y_pred3 = knn.predict(X_test)
-print("k=9 test",knn.score(X_test,Y_test),"\n")
-
-knn=KNeighborsClassifier(n_neighbors=15)
-knn.fit(X_train, Y_train)
-print("k=15 ent",knn.score(X_train,Y_train))
-Y_pred4 = knn.predict(X_test)
-print("k=15 test",knn.score(X_test,Y_test))
-
+for i in range(1,11):
+        knn=KNeighborsClassifier(n_neighbors=i)
+        knn.fit(X_train, Y_train)
+        Y_pred= knn.predict(X_test)
+        print("LA valeur de k est :", i)
+        print("k=3 ent",knn.score(X_train,Y_train))
+        print("k=3 test",knn.score(X_test,Y_test),"\n")
+        print(knn.accuracy_score(Y_pred,Y_test))
