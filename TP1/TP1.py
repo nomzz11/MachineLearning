@@ -5,50 +5,6 @@ Created on Thu Feb 29 10:31:59 2024
 @author: lacou
 """
 
-"""
-import pandas as pd
-from sklearn import datasets
-import numpy as np
-import matplotlib as mp
-import seaborn as sns
-
-#1
-wine = datasets.load_wine()
-#2
-print(wine.data.shape)
-print(wine.feature_names)
-print(wine.target_names)
-#3
-df = pd.DataFrame(wine.data, columns =wine.feature_names)
-df['target']=wine.target
-
-#4
-print(df.head()) #en argument le nombre de colomns
-
-#5
-print(df.info()) #affiche nom de colomne et nombre de ligne (peut observer si données manquantes)
-print(df.dtypes)
-
-#6
-print(df.isnull().sum())
-
-#7
-df.iloc[:,0:3].describe()
-# OU df[['alcohol', 'malic_acid, 'ash']].describe()
-
-#•8*
-freq=df['target'].value_counts()
-freq.plot(kind='bar')
-
-#9
-df[['alcohol','magnesium', 'color_intensity']].hist()
-
-#10
-sns.pairplot(data=df,x_vars=['alcohol'],y_vars=['color_intensity'],hue='target',palette=['Red','Blue','Green'])
-
-#res = pd.plotting.scatter_matrix(df,figsize=[12,12], c='y') 
-"""
-
 from sklearn import datasets
 import pandas as pd
 import numpy as np
