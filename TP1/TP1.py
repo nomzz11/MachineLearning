@@ -79,7 +79,7 @@ knn.fit(X_train, Y_train)
 print(knn.score(X_train,Y_train))
 Y_pred = knn.predict(X_test)
 print(knn.score(X_test,Y_test))
-print(knn.accuracy_score(Y_pred,Y_test)) #taux de calssification, voir si le model est bien -> proche de 1
+print(accuracy_score(Y_pred,Y_test)) #taux de calssification, voir si le model est bien -> proche de 1
 
 #13-KNN avec différentes valeurs de k 
 
@@ -90,4 +90,4 @@ for i in range(1,11):
         print("LA valeur de k est :", i)
         print("k=3 ent",knn.score(X_train,Y_train))
         print("k=3 test",knn.score(X_test,Y_test),"\n")
-        print(knn.accuracy_score(Y_pred,Y_test))
+        print(accuracy_score(Y_pred,Y_test))
